@@ -1,9 +1,159 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+  FaReact,
+  FaNodeJs,
+  FaGitAlt,
+  FaDocker,
+  FaGithub,
+} from "react-icons/fa";
+import {
+  SiTailwindcss,
+  SiTypescript,
+  SiNextdotjs,
+  SiExpress,
+  SiMongodb,
+  SiPostgresql,
+  SiNodedotjs,
+} from "react-icons/si";
 
 const skills = [
   // Frontend
-  { name: "HTML/CSS", level: 95, category: "frontend" },
+  {
+    name: "HTML",
+    category: "frontend",
+    icon: <FaHtml5 className="text-orange-600 text-4xl" />,
+  },
+  {
+    name: "CSS",
+    category: "frontend",
+    icon: <FaCss3Alt className="text-blue-600 text-4xl" />,
+  },
+  {
+    name: "JavaScript",
+    category: "frontend",
+    icon: <FaJs className="text-yellow-400 text-4xl" />,
+  },
+  {
+    name: "React",
+    category: "frontend",
+    icon: <FaReact className="text-blue-400 text-4xl" />,
+  },
+  {
+    name: "TypeScript",
+    category: "frontend",
+    icon: <SiTypescript className="text-blue-500 text-4xl" />,
+  },
+  {
+    name: "Tailwind CSS",
+    category: "frontend",
+    icon: <SiTailwindcss className="text-cyan-400 text-4xl" />,
+  },
+  {
+    name: "Next.js",
+    category: "frontend",
+    icon: <SiNextdotjs className="text-black dark:text-white text-4xl" />,
+  },
+
+  // Backend
+  {
+    name: "Node.js",
+    category: "backend",
+    icon: <FaNodeJs className="text-green-600 text-4xl" />,
+  },
+  {
+    name: "Express",
+    category: "backend",
+    icon: <SiExpress className="text-gray-700 dark:text-gray-200 text-4xl" />,
+  },
+  {
+    name: "MongoDB",
+    category: "backend",
+    icon: <SiMongodb className="text-green-500 text-4xl" />,
+  },
+  {
+    name: "PostgreSQL",
+    category: "backend",
+    icon: <SiPostgresql className="text-blue-800 text-4xl" />,
+  },
+
+  // Tools
+  {
+    name: "Git",
+    category: "tools",
+    icon: <FaGitAlt className="text-orange-500 text-4xl" />,
+  },
+  {
+    name: "GitHub",
+    category: "tools",
+    icon: <FaGithub className="text-black dark:text-white text-4xl" />,
+  },
+  {
+    name: "Docker",
+    category: "tools",
+    icon: <FaDocker className="text-blue-500 text-4xl" />,
+  },
+];
+
+const categories = ["all", "frontend", "backend", "tools"];
+
+export const SkillsSection = () => {
+  const [activeCategory, setActiveCategory] = useState("all");
+
+  const filteredSkills = skills.filter(
+    (skill) => activeCategory === "all" || skill.category === activeCategory
+  );
+
+  return (
+    <section id="skills" className="py-24 px-4 relative bg-secondary/30">
+      <div className="container mx-auto max-w-5xl">
+        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
+          My <span className="text-primary"> Skills</span>
+        </h2>
+
+        <div className="flex flex-wrap justify-center gap-4 mb-12">
+          {categories.map((category, key) => (
+            <button
+              key={key}
+              onClick={() => setActiveCategory(category)}
+              className={cn(
+                "px-5 py-2 rounded-full transition-colors duration-300 capitalize",
+                activeCategory === category
+                  ? "bg-primary text-primary-foreground"
+                  : "bg-secondary/70 text-foreground hover:bg-secondary"
+              )}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filteredSkills.map((skill, key) => (
+            <div
+              key={key}
+              className="flex items-center gap-4 bg-whitw dark:bg-transparent p-4 rounded-lg card-hover"
+            >
+              <div>{skill.icon}</div>
+              <h3 className="font-semibold text-lg">{skill.name}</h3>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+/*import { useState } from "react";
+import { cn } from "@/lib/utils";
+import { FaNodeJs} from "react-icons/fa"
+
+const skills = [
+  // Frontend
+  { name: "HTML/CSS", level: 95, category: "frontend", icon: "" },
   { name: "JavaScript", level: 90, category: "frontend" },
   { name: "React", level: 90, category: "frontend" },
   { name: "TypeScript", level: 85, category: "frontend" },
@@ -15,14 +165,14 @@ const skills = [
   { name: "Express", level: 75, category: "backend" },
   { name: "MongoDB", level: 70, category: "backend" },
   { name: "PostgreSQL", level: 65, category: "backend" },
-  { name: "GraphQL", level: 60, category: "backend" },
 
   // Tools
   { name: "Git/GitHub", level: 90, category: "tools" },
   { name: "Docker", level: 70, category: "tools" },
-  { name: "Figma", level: 85, category: "tools" },
   { name: "VS Code", level: 95, category: "tools" },
 ];
+
+
 
 const categories = ["all", "frontend", "backend", "tools"];
 
@@ -60,7 +210,7 @@ export const SkillsSection = () => {
           {filteredSkills.map((skill, key) => (
             <div
               key={key}
-              className="bg-card p-6 rounded-lg shadow-xs card-hover"
+              className="bg-center p-4 rounded-lg shadow-xs card-hover"
             >
               <div className="text-left mb-4">
                 <h3 className="font-semibold text-lg"> {skill.name}</h3>
@@ -70,8 +220,14 @@ export const SkillsSection = () => {
                   className="bg-primary h-2 rounded-full origin-left animate-[grow_1.5s_ease-out]"
                   style={{ width: skill.level + "%" }}
                 />
+                <div>
+                  <a
+                    href="https://www.flaticon.com/free-icons/nodejs"
+                    title="nodejs icons"
+                  >
+                  </a>
+                </div>
               </div>
-
               <div className="text-right mt-1">
                 <span className="text-sm text-muted-foreground">
                   {skill.level}%
@@ -83,4 +239,19 @@ export const SkillsSection = () => {
       </div>
     </section>
   );
-};
+};*/
+/*<div className="w-full bg-secondary/50 h-2 rounded-full overflow-hidden">
+                  <div
+                  className="bg-primary h-2 rounded-full origin-left animate-[grow_1.5s_ease-out]"
+                  style={{ width: skill.level + "%" }}
+                />
+              </div>*/
+/*  <div className="text-right mt-1">
+                <span className="text-sm text-muted-foreground">
+                  {skill.level}%
+                </span>
+              </div>*/
+
+/*<div className="text-left mb-1">
+                <h3 className="font-semibold text-lg"> {skill.name}</h3>
+              </div>;*/

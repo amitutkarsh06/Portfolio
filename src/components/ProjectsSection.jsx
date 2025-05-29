@@ -3,32 +3,33 @@ import { ArrowRight, ExternalLink, Github } from "lucide-react";
 const projects = [
   {
     id: 1,
-    title: "SaaS Landing Page",
-    description: "A beautiful landing page app using React and Tailwind.",
-    image: "/projects/project1.png",
-    tags: ["React", "TailwindCSS", "Supabase"],
-    demoUrl: "#",
-    githubUrl: "#",
+    title: "X-lite",
+    description:
+      "Full stack x-clone with features of post, like, comment and profile",
+    image: "/projects/p1.png",
+    tags: ["React", "TailwindCSS", "MongoDB", "Nodejs", "express"],
+    demoUrl: "https://x-lite.onrender.com",
+    githubUrl: "https://github.com/amitutkarsh06/x-lite",
   },
   {
     id: 2,
-    title: "Orbit Analytics Dashboard",
+    title: "Chat It",
     description:
-      "Interactive analytics dashboard with data visualization and filtering capabilities.",
-    image: "/projects/project2.png",
-    tags: ["TypeScript", "D3.js", "Next.js"],
-    demoUrl: "#",
-    githubUrl: "#",
+      "A real time communication chat app with personalized Avatar feature",
+    image: "/projects/p2.png",
+    tags: ["React", "Nodejs", "expressjs", "socket.io"],
+    demoUrl: "https://chat-app-ebne.onrender.com",
+    githubUrl: "https://github.com/amitutkarsh06/chat-app",
   },
   {
     id: 3,
-    title: "E-commerce Platform",
+    title: "Recipe-Finder app",
     description:
-      "Full-featured e-commerce platform with user authentication and payment processing.",
-    image: "/projects/project3.png",
-    tags: ["React", "Node.js", "Stripe"],
-    demoUrl: "#",
-    githubUrl: "#",
+      "Find the recipe of your favourite food with just one search with favourites feature",
+    image: "/projects/p3.png",
+    tags: ["React", "axios", "Tailwind CSS"],
+    demoUrl: "https://recipe-finder-app-omega.vercel.app/",
+    githubUrl: "https://github.com/amitutkarsh06/recipeFinder-app",
   },
 ];
 
@@ -100,7 +101,7 @@ export const ProjectsSection = () => {
           <a
             className="cosmic-button w-fit flex items-center mx-auto gap-2"
             target="_blank"
-            href="https://github.com/machadop1407"
+            href="https://github.com/amitutkarsh06"
           >
             Check My Github <ArrowRight size={16} />
           </a>

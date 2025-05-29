@@ -1,4 +1,5 @@
 import { ArrowDown } from "lucide-react";
+import TypewriterComponent from "./TypeWriter";
 
 export const HeroSection = () => {
   return (
@@ -12,20 +13,23 @@ export const HeroSection = () => {
             <span className="opacity-0 animate-fade-in"> Hi, I'm</span>
             <span className="text-primary opacity-0 animate-fade-in-delay-1">
               {" "}
-              Pedro
+              Amit
             </span>
             <span className="text-gradient ml-2 opacity-0 animate-fade-in-delay-2">
               {" "}
-              Machado
+              Utkarsh
             </span>
           </h1>
-
+          ;
+          <TypewriterComponent className="text-3xl" />
           <p className="text-lg md:text-xl text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-3">
-            I create stellar web experiences with modern technologies.
-            Specializing in front-end development, I build interfaces that are
-            both beautiful and functional.
+            Welcome to my digital space! I'm a Full Stack Developer with a
+            strong foundation in both front-end and back-end technologies.'m
+            enthusiastic about clean code, scalable systems, and learning new
+            technologies. Whether it's building web apps, fixing bugs, or
+            collaborating on open-source projects, I thrive in environments
+            where creativity meets logic.
           </p>
-
           <div className="pt-4 opacity-0 animate-fade-in-delay-4">
             <a href="#projects" className="cosmic-button">
               View My Work
@@ -41,3 +45,13 @@ export const HeroSection = () => {
     </section>
   );
 };
+
+
+/*<h1 className="text-4xl md:text-6xl font-bold tracking-tight">
+  <span className="opacity-0 animate-fade-in"> Hi, I'm</span>
+  <span className="text-primary opacity-0 animate-fade-in-delay-1"> Amit</span>
+  <span className="text-gradient ml-2 opacity-0 animate-fade-in-delay-2">
+    {" "}
+    Utkarsh
+  </span>
+</h1>;*/

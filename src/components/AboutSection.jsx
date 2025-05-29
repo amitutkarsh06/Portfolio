@@ -12,13 +12,15 @@ export const AboutSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <h3 className="text-2xl font-semibold">
-              Passionate Web Developer & Tech Creator
+              Passionate Full Stack Developer
             </h3>
 
             <p className="text-muted-foreground">
-              With over 5 years of experience in web development, I specialize
-              in creating responsive, accessible, and performant web
-              applications using modern technologies.
+              Hey there! I'm a Full Stack Developer who loves building things
+              for the web. I recently graduated from IIT Dhanbad and I'm
+              passionate about building robust and scalable applications.
+              I'm always excited to dive into new technologies and solve complex
+              problems.
             </p>
 
             <p className="text-muted-foreground">
@@ -35,7 +37,7 @@ export const AboutSection = () => {
               </a>
 
               <a
-                href=""
+                href="https://drive.google.com/file/d/1DaseLosmqWX926oJd6idXeEXovsU5yRi/view?usp=sharing"
                 className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300"
               >
                 Download CV
