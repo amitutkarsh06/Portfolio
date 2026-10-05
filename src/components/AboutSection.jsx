@@ -18,8 +18,8 @@ export const AboutSection = () => {
             <p className="text-muted-foreground">
               Hey there! I'm a Full Stack Developer who loves building things
               for the web. I recently graduated from IIT Dhanbad and I'm
-              passionate about building robust and scalable applications.
-              I'm always excited to dive into new technologies and solve complex
+              passionate about building robust and scalable applications. I'm
+              always excited to dive into new technologies and solve complex
               problems.
             </p>
 
@@ -37,7 +37,7 @@ export const AboutSection = () => {
               </a>
 
               <a
-                href="https://drive.google.com/file/d/1DaseLosmqWX926oJd6idXeEXovsU5yRi/view?usp=sharing"
+                href="https://drive.google.com/file/d/1eCoKLdo5sUlo2WkOSo6Kry2IX7PP_zmd/view?usp=sharing"
                 className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300"
               >
                 Download CV
